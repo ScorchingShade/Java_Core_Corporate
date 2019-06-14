@@ -13,7 +13,7 @@ class Parent{
 }
 
 public class Overriding extends Parent{
-
+	@Override //method level annotation
 	void display(){
 		int a = 10;
 		System.out.println("This is overriding and a = "+a);
@@ -31,8 +31,9 @@ public class Overriding extends Parent{
 		// TODO Auto-generated method stub
 		
 		Parent p = new Parent();
-		Overriding o = new Overriding();
+		Overriding o = new Overriding(); 
 		
+		//upcasting, reducing the load on Super class (parent ) by creating object of subclass.
 		//Since we have given reference of child class, the method of child class will be called:NOT PARENT CLASS
 		Parent p1 = new Overriding();
 		//p1.display();
