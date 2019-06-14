@@ -22,7 +22,7 @@ public class Overloader {
     	 //We typecasted a to b like this
     	 b = (int)(a);
     	 
-    	 System.out.println(b+" "+a);
+    	 System.out.printf("%.9f + %d ",b, a);
     	 
 	}
 

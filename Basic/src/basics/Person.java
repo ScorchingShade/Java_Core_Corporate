@@ -18,10 +18,7 @@ public class Person {
 		name = in.nextLine();
 		number = in.nextInt();
 		id = in.nextInt();
-		
 		Person p = new Person();
-		
-		
 		p.display(id,number,name);
 	}  
 	
