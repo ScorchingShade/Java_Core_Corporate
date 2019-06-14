@@ -20,6 +20,7 @@ public class Person {
 		id = in.nextInt();
 		Person p = new Person();
 		p.display(id,number,name);
+		in.close();
 	}  
 	
 	
