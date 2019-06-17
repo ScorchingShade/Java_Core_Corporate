@@ -72,7 +72,7 @@ class RunningT2 extends Thread{
         }
     }
 
-}
+};
 public class Threads {
 
     public static void main(String args[]) throws  ClassNotFoundException{
@@ -84,6 +84,9 @@ public class Threads {
         for (int i = 0; i < 5; i++) {
             System.out.println("main");
         }
+
+
+
 
         RunningT r = new RunningT();
         RunningT1 r1 = new RunningT1();
