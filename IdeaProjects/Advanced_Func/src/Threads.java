@@ -1,3 +1,5 @@
+import static java.lang.Thread.sleep;
+
 class RunningT  implements Runnable {
 
     public void displayName() throws ClassNotFoundException{
@@ -11,8 +13,13 @@ class RunningT  implements Runnable {
     @Override
     public void run() {
 
-        for (int i = 0; i < 5; i++) {
-            System.out.println("t1");
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+            try {
+                sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
         }
     }
@@ -31,8 +38,13 @@ class RunningT1 implements Runnable{
     @Override
     public void run() {
 
-        for (int i = 0; i < 5; i++) {
-            System.out.println("t2");
+        for (int i = 10; i > 0; i--) {
+            System.out.println(i);
+            try {
+                sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
         }
     }
@@ -47,8 +59,13 @@ class RunningT2 extends Thread{
 
     public void run() {
 
-        for (int i = 0; i < 5; i++) {
-            System.out.println("t3");
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+            try {
+                sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
         }
     }
@@ -79,16 +96,22 @@ public class Threads {
         Thread t1 = new Thread(r1);
 
 
-
+/*
         try {
             t.join(1000);
             t1.join(10000);
             t2.join(50000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         t.start();
         t1.start();
+        //join method always called after start
+        try {
+            t1.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         t2.start();
     }
 
