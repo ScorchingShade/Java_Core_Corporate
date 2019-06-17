@@ -39,12 +39,14 @@ class RunningT1 implements Runnable{
     public void run() {
 
         for (int i = 10; i > 0; i--) {
-            System.out.println(i);
+
             try {
+                System.out.println(i);
                 sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("Interrupted");
             }
+            System.out.println("Kya apna thread aaega?");
 
         }
     }
@@ -87,9 +89,9 @@ public class Threads {
         RunningT1 r1 = new RunningT1();
         RunningT2 t2 = new RunningT2();
 
-       r.displayName();
-        r1.displayName();
-        t2.displayName();
+      // r.displayName();
+        //r1.displayName();
+        //t2.displayName();
 
 
         Thread t = new Thread(r);
@@ -106,13 +108,15 @@ public class Threads {
         }*/
         t.start();
         t1.start();
+        t1.interrupt();
         //join method always called after start
         try {
             t1.join();
+            t1.interrupt();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        t2.start();
+       // t2.start();
     }
 
 }
