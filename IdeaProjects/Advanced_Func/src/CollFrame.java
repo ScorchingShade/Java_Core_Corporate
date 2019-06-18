@@ -195,6 +195,17 @@ public class CollFrame {
         System.out.println(h);
     }
 
+    void TreeSet(){
+        TreeSet<String> h = new TreeSet<String>();
+        h.add("Lightning McQueen");
+        h.add("Mator");
+        h.add("Hudson Hornet");
+        h.add("Piston Cup");
+
+        System.out.println(h);
+
+    }
+
 
     public static void main(String[] args) {
         CollFrame cf= new CollFrame();
@@ -204,15 +215,17 @@ public class CollFrame {
         cf.ArrayLists();
         cf.LinkedLists();
         cf.Stacks();
-        cf.ArrayDeques();
+
+
 
         //Sets
 
         //Queue
-
+        cf.ArrayDeques();
 
         //Hash
         cf.Hashset();
+        cf.TreeSet();
 
     }
 
