@@ -14,6 +14,7 @@ public class CollFrame {
     //LinkedHashset
 
     //Priority Queue
+    //ArrayDeque
 
 
 
@@ -155,8 +156,44 @@ public class CollFrame {
         System.out.println();
     }
 
+    void ArrayDeques(){
 
+        ArrayDeque<Integer> ad = new ArrayDeque<Integer>();
 
+        ad.add(10);
+        ad.offer(55);
+        ad.offer(30);
+        ad.add(13);
+
+        System.out.println(ad);
+        System.out.println("Top element is: "+ad.peek());
+        System.out.println(ad);
+
+        ad.poll();
+        System.out.println(ad);
+
+        Iterator<Integer> i = ad.descendingIterator();
+        while(i.hasNext()){
+
+            System.out.println(i.next());
+        }
+
+        ArrayList<Integer> ar = new ArrayList<Integer>(ad);
+        Collections.sort(ar);
+
+        System.out.println(ar);
+    }
+
+    void Hashset(){
+
+        HashSet<Integer> h = new HashSet<Integer>();
+        h.add(2);
+        h.add(2);
+        h.add(null);
+        h.add(12);
+
+        System.out.println(h);
+    }
 
 
     public static void main(String[] args) {
@@ -167,10 +204,15 @@ public class CollFrame {
         cf.ArrayLists();
         cf.LinkedLists();
         cf.Stacks();
+        cf.ArrayDeques();
 
         //Sets
 
         //Queue
+
+
+        //Hash
+        cf.Hashset();
 
     }
 
